@@ -2,7 +2,7 @@ import { KeyboardEvent, useEffect } from "react";
 import closeIcon from "../../assets/images/close-icon.svg";
 import { Order } from "../../types/Order";
 import { formatCurrency } from "../../utils/formatCurrency";
-import { Overlay, ModalBody, OrderDetails, Actions } from "./styles";
+import { Actions, ModalBody, OrderDetails, Overlay } from "./styles";
 
 interface OrderModalProps {
   visible: boolean;
@@ -49,7 +49,7 @@ export function OrderModal({
     <Overlay>
       <ModalBody>
         <header>
-          <strong>Mesa {order.table}</strong>
+          <strong>Pedido {order.orderNumber}</strong>
           <button type="button" onClick={onClose}>
             <img src={closeIcon} alt="icone de fechar" />
           </button>
@@ -84,7 +84,7 @@ export function OrderModal({
 
                 <div className="product-details">
                   <strong>{product.name}</strong>
-                  <span>{formatCurrency(product.price)}</span>
+                  <span>{formatCurrency(product.price / 100)}</span>
                 </div>
               </div>
             ))}
@@ -92,7 +92,7 @@ export function OrderModal({
 
           <div className="total">
             <span>Total</span>
-            <strong>{formatCurrency(total)}</strong>
+            <strong>{formatCurrency(total / 100)}</strong>
           </div>
 
         </OrderDetails>

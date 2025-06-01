@@ -1,9 +1,9 @@
 import { ToastContainer } from "react-toastify";
 import "react-toastify/ReactToastify.css";
 
-import { GlobalStyles } from "./styles/GlobalStyles";
 import { Header } from "./components/Header";
 import { Orders } from "./components/Orders";
+import { GlobalStyles } from "./styles/GlobalStyles";
 
 export function App() {
   return (
