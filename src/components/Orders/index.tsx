@@ -11,7 +11,7 @@ export function Orders() {
   const [orders, setOrders] = useState<Order[]>([]);
 
   useEffect(() => {
-    const socket = socketIo("http://192.168.18.147:3001", {
+    const socket = socketIo("https://totem.pagway.com", {
       transports: ["websocket"],
     });
 
